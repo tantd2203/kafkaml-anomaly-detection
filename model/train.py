@@ -16,4 +16,6 @@ X_train = np.round(X_train, 3)
 clf = IsolationForest(n_estimators=50, max_samples=500, random_state=rng, contamination=0.01)
 clf.fit(X_train)
 
-dump(clf, './isolation_forest.joblib')
+dump(clf, 'isolation_forest.joblib')
+
+print("finished training")
