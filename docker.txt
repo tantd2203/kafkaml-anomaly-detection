@@ -1,8 +1,13 @@
-docker exec kafka kafka-topics --list --bootstrap-server 127.0.0.1:29092 --topic transactions
+docker exec kafka kafka-topics --list --bootstrap-server 127.0.0.1:29092
 bin\windows\kafka-console-consumer.bat --topic transactions --from-beginning --bootstrap-server localhost:9092
 
 
 Create Topic
-docker exec kafka kafka-topics --create --bootstrap-server 127.0.0.1:9092 --replication-factor 1 --partitions 1 --topic transactions
+docker exec kafka kafka-topics --create --bootstrap-server 127.0.0.1:29092 --replication-factor 1 --partitions 1 --topic transactions
+docker exec kafka kafka-topics --create --bootstrap-server 127.0.0.1:29092 --replication-factor 1 --partitions 1 --topic anomalies
+
 consumer
-docker exec kafka-console-consumer --topic transactions --from-beginning --bootstrap-server localhost:9092
+docker exec kafka-console-consumer --topic transactions --from-beginning --bootstrap-server 127.0.0.1:29092
+
+
+
